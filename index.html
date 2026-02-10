@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Nandhini ❤️</title>
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#ffe6f0;
+  font-family:Arial, sans-serif;
+}
+
+.container{
+  background:white;
+  padding:20px;
+  border-radius:16px;
+  text-align:center;
+  width:90%;
+  max-width:350px;
+}
+
+button{
+  width:100%;
+  padding:15px;
+  margin-top:12px;
+  font-size:18px;
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.yes{
+  background:#28a745;
+  color:white;
+}
+
+.no{
+  background:#dc3545;
+  color:white;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h2>Nandhini ❤️</h2>
+  <p>Will you be mine forever?<br>— Hariharan</p>
+
+  <button class="yes" onclick="yesClick()">Yes 💖</button>
+  <button class="no" onclick="noClick()">No 😶</button>
+</div>
+
+<script>
+
+let messageIndex = 0;
+
+const messages = [
+"Are you sure? 🥺",
+"Think again 😏",
+"Pleaseee Nandhini 💕",
+"Hariharan will cry 😭"
+];
+
+const yesButton = document.querySelector(".yes");
+const noButton = document.querySelector(".no");
+
+function noClick(){
+
+  // Change NO text
+  noButton.innerText = messages[messageIndex];
+  messageIndex = (messageIndex + 1) % messages.length;
+
+  // Increase YES button size
+  let currentSize = window.getComputedStyle(yesButton).fontSize;
+  currentSize = parseFloat(currentSize);
+
+  yesButton.style.fontSize = (currentSize + 5) + "px";
+}
+
+function yesClick(){
+
+  // IMPORTANT FOR GITHUB PAGES
+  window.location.href = "./yes_page.html";
+
+}
+
+</script>
+
+</body>
+</html>
